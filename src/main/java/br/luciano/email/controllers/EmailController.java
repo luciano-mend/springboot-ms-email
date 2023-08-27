@@ -24,7 +24,7 @@ public class EmailController {
 		EmailModel emailModel = new EmailModel();
 		BeanUtils.copyProperties(emailDto, emailModel);
 		emailService.sendEmail(emailModel);
-		return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
+		return ResponseEntity.status(HttpStatus.CREATED).body(emailModel);
 	}
 
 }
