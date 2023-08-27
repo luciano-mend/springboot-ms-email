@@ -52,6 +52,7 @@ public class EmailControllerTest {
 		var response = assertDoesNotThrow(() -> emailController.sendingEmail(emailDto));
 		assertNotNull(response);
 		assertEquals(ResponseEntity.status(HttpStatus.CREATED).body(emailModel), response);
+		assertEquals(HttpStatus.CREATED, response.getStatusCode());
 	}
 
 }
